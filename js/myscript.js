@@ -17,16 +17,16 @@ while (userChoice !== "pari" && userChoice !== "dispari") {
     userChoice = prompt('La tua scelta non è valida. Inserisci pari o dispari.')
 }
 
-let userNumber = prompt('Inserisci un numero da 1 a 5.')
+let userNumber = parseInt(prompt('Inserisci un numero da 1 a 5.'));
 console.log(userChoice, userNumber);
 
 while (userNumber < 1 || userNumber > 5) {
-    userNumber = prompt('Il numero inserito non è valido. Inserisci un numero da 1 a 5.')
+    userNumber = parseInt(prompt('Il numero inserito non è valido. Inserisci un numero da 1 a 5.'));
 }
 
 const opponentNumber = getRandomNumber(1, 5);
-console.log(opponentNumber);
-
+const sum = getSum(userNumber, opponentNumber);
+console.log(opponentNumber, sum);
 
 /* FUNCTIONS */
 
@@ -64,11 +64,15 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+function getSum(firstNumber, secondNumber) {
+    const sum = firstNumber + secondNumber;
+    return sum;
+}
 
 function evenOdd(number) {
     if ((userNumber % 2) != 0) {
         return "odd";
     } else {
-        return "even"
+        return "even";
     }
 }
