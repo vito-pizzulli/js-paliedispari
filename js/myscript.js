@@ -34,9 +34,9 @@ if (evenOdd(sum) === "odd") {
 }
 
 if (userChoice === finalNumberType) {
-    console.log("Hai indovinato! Hai selezionato " + userChoice + ", la somma del tuo numero " + userNumber + " e di quello avversario " + opponentNumber + " è " + sum + " ed è " + finalNumberType + ".");
+    console.log("Hai vinto! Hai selezionato " + userChoice + ", la somma del tuo numero " + userNumber + " e di quello avversario " + opponentNumber + " è " + sum + " ed è " + finalNumberType + ".");
 } else {
-    console.log("Non hai indovinato. Hai selezionato " + userChoice + ", la somma del tuo numero " + userNumber + " e di quello avversario " + opponentNumber + " è " + sum + " ed è " + finalNumberType + ".");
+    console.log("Non hai vinto. Hai selezionato " + userChoice + ", la somma del tuo numero " + userNumber + " e di quello avversario " + opponentNumber + " è " + sum + " ed è " + finalNumberType + ".");
 }
 
 
