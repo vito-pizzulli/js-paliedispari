@@ -25,7 +25,6 @@ while (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
 
 const opponentNumber = getRandomNumber(1, 5);
 const sum = getSum(userNumber, opponentNumber);
-
 let finalNumberType;
 
 if (evenOdd(sum) === "odd") {
@@ -39,6 +38,7 @@ if (userChoice === finalNumberType) {
 } else {
     console.log("Non hai indovinato. Hai selezionato " + userChoice + ", la somma del tuo numero " + userNumber + " e di quello avversario " + opponentNumber + " è " + sum + " ed è " + finalNumberType + ".");
 }
+
 
 /* FUNCTIONS */
 
