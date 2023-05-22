@@ -18,15 +18,27 @@ while (userChoice !== "pari" && userChoice !== "dispari") {
 }
 
 let userNumber = parseInt(prompt('Inserisci un numero da 1 a 5.'));
-console.log(userChoice, userNumber);
 
-while (userNumber < 1 || userNumber > 5) {
+while (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
     userNumber = parseInt(prompt('Il numero inserito non è valido. Inserisci un numero da 1 a 5.'));
 }
 
 const opponentNumber = getRandomNumber(1, 5);
 const sum = getSum(userNumber, opponentNumber);
-console.log(opponentNumber, sum);
+
+let finalNumberType;
+
+if (evenOdd(sum) === "odd") {
+    finalNumberType = "dispari";
+} else {
+    finalNumberType = "pari";
+}
+
+if (userChoice === finalNumberType) {
+    console.log("Hai indovinato! Hai selezionato " + userChoice + ", la somma del tuo numero " + userNumber + " e di quello avversario " + opponentNumber + " è " + sum + " ed è " + finalNumberType + ".");
+} else {
+    console.log("Non hai indovinato. Hai selezionato " + userChoice + ", la somma del tuo numero " + userNumber + " e di quello avversario " + opponentNumber + " è " + sum + " ed è " + finalNumberType + ".");
+}
 
 /* FUNCTIONS */
 
@@ -61,16 +73,27 @@ function palindrome(word) {
  * @returns A random number between the parameters.
  */
 function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+/**
+ * This function sums the two parameter numbers.
+ * @param {*} firstNumber The first number to sum.
+ * @param {*} secondNumber The second number to sum.
+ * @returns The sum of the two numbers.
+ */
 function getSum(firstNumber, secondNumber) {
     const sum = firstNumber + secondNumber;
     return sum;
 }
 
+/**
+ * This function checks if the parameter number is even or odd.
+ * @param {*} number The number to check.
+ * @returns "odd" if the number is odd, "even" otherwise.
+ */
 function evenOdd(number) {
-    if ((userNumber % 2) != 0) {
+    if ((number % 2) != 0) {
         return "odd";
     } else {
         return "even";
