@@ -48,18 +48,13 @@ if (userChoice === finalNumberType) {
  * @returns true if the word is a palindrome, false otherwise.
  */
 function palindrome(word) {
-    let decomposedWord = ' ';
-    let decomposedWordReverse = ' ';
+    let decomposedWordReverse = '';
 
-    for (let i = 0; i < word.length; i++) {
-        decomposedWord += word.charAt(i);
+    for (let i = (word.length - 1); i >= 0; i--) {
+        decomposedWordReverse += word.charAt(i);
     }
 
-    for (let j = (word.length - 1); j >= 0; j--) {
-        decomposedWordReverse += word.charAt(j);
-    }
-
-    if (decomposedWord === decomposedWordReverse) {
+    if (word === decomposedWordReverse) {
         return true;
     } else {
         return false;
